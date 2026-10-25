@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wilfried Tamba Soh — Développeur junior</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6fa;--surface:#fff;--text:#0f1520;--muted:#5a6578;--accent:#0b8f63;--accent2:#3b5bdb;--border:#dde3ec;--glow:rgba(11,143,99,.14);--nav:rgba(244,246,250,.8);color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#06080d;--surface:#0e131b;--text:#eaf0f8;--muted:#8d99ab;--accent:#38e2a0;--accent2:#7aa5ff;--border:#1b2431;--glow:rgba(56,226,160,.16);--nav:rgba(6,8,13,.75);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#06080d;--surface:#0e131b;--text:#eaf0f8;--muted:#8d99ab;--accent:#38e2a0;--accent2:#7aa5ff;--border:#1b2431;--glow:rgba(56,226,160,.16);--nav:rgba(6,8,13,.75);color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--nav);z-index:30}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:.4;pointer-events:none}
+.blob{position:fixed;width:520px;height:520px;border-radius:50%;filter:blur(110px);opacity:.22;z-index:0;pointer-events:none}
+.b1{background:var(--accent);top:-160px;left:-120px}.b2{background:var(--accent2);bottom:-200px;right:-140px}
+.wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:0 22px}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--nav);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+header.nav .wrap{display:flex;align-items:center;gap:18px;height:60px}
+.logo{font-weight:800;letter-spacing:-.02em;margin-right:auto;color:var(--text);text-decoration:none}
+.logo span{color:var(--accent)}
+header.nav a:not(.logo){color:var(--muted);text-decoration:none;font-size:14px;font-weight:500}
+header.nav a:not(.logo):hover{color:var(--text)}
+#theme{background:none;border:1px solid var(--border);color:var(--muted);border-radius:9px;width:34px;height:34px;cursor:pointer}
+@media(max-width:720px){header.nav a:not(.logo){display:none}}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;padding:78px 0 56px}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:48px}}
+.eyebrow{color:var(--accent);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:clamp(42px,7.4vw,78px);line-height:1;margin:14px 0 18px;letter-spacing:-.04em;font-weight:800}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:540px;margin:0 0 26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;background:var(--text);color:var(--bg);font-weight:600;text-decoration:none;border:0;cursor:pointer;font:600 15px Inter,sans-serif;margin:0 10px 10px 0;transition:.2s}
+.btn.alt{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px var(--glow)}
+.term{background:#090d13;color:#d8e3f0;border:1px solid #1d2836;border-radius:16px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
+.bar{display:flex;gap:7px;padding:12px 14px;background:#0f1620;align-items:center;font-size:12px;color:#7d8da0}
+.bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}.bar span{margin-left:8px}
+.out{padding:16px;font-size:13.5px;line-height:1.6;overflow:auto;white-space:pre-wrap;word-break:break-word}
+.g{color:#38e2a0}.b{color:#7aa5ff}.y{color:#f5c76b}.m{color:#7d8da0}.r{color:#ff7b72}
+#hterm{height:210px}
+.inp{display:flex;gap:8px;padding:11px 16px;border-top:1px solid #1d2836;font-size:14px}
+.inp span{color:#38e2a0}.inp input{flex:1;background:none;border:0;outline:0;color:#d8e3f0;font:inherit;min-width:0}
+section{padding:72px 0 8px}
+.k{font-size:13px;color:var(--accent);letter-spacing:.06em}
+h2{font-size:clamp(28px,4.4vw,42px);letter-spacing:-.03em;margin:6px 0 10px;line-height:1.1;font-weight:800}
+.sub{color:var(--muted);max-width:620px;margin:0 0 30px}
+.c{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:border-color .25s,transform .25s}
+.c::before{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--mx,-200px) var(--my,-200px),var(--glow),transparent 60%);pointer-events:none;opacity:0;transition:opacity .25s}
+.c:hover::before{opacity:1}.c:hover{border-color:color-mix(in srgb,var(--accent) 55%,var(--border))}
+.projs{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.proj{padding:26px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.br{font-size:12.5px;color:var(--accent2)}
+.pill{font-size:12px;padding:3px 11px;border-radius:99px;border:1px solid var(--border);color:var(--accent);font-weight:600}
+.proj h3{font-size:24px;margin:0 0 8px;letter-spacing:-.02em}
+.proj p{color:var(--muted);margin:0 0 14px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+.tag{font-size:12.5px;padding:3px 11px;border-radius:8px;background:color-mix(in srgb,var(--accent2) 12%,transparent);color:var(--accent2);font-weight:500}
+.more{max-height:0;overflow:hidden;transition:max-height .4s;margin:0;padding-left:18px;color:var(--muted);font-size:14.5px}
+.proj.open .more{max-height:200px;margin-bottom:12px}
+.link{background:none;border:0;color:var(--accent);font:600 14px Inter,sans-serif;cursor:pointer;padding:0}
+.dash{display:grid;gap:14px;grid-template-columns:repeat(3,1fr);margin-bottom:14px}
+.kpi{padding:16px 20px}.kpi b{font-size:32px;display:block;letter-spacing:-.02em;line-height:1.1}.kpi span{color:var(--muted);font-size:13px}
+.nw{display:grid;gap:10px;grid-template-columns:2fr 1.2fr .9fr auto;padding:14px;margin-bottom:14px}
+.nw input,.nw select,.inc select{background:var(--bg);border:1px solid var(--border);color:var(--text);border-radius:10px;padding:10px 12px;font:inherit;font-size:14px;min-width:0}
+.btn.sm{padding:9px 16px;font-size:13.5px;margin:0;justify-content:center}
+.fl{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.chip.on{border-color:var(--accent);color:var(--accent)}
+.inc{display:grid;grid-template-columns:1fr auto auto auto auto;gap:12px;align-items:center;padding:14px 18px;margin-bottom:10px}
+.ttl b{display:block}.ttl small{color:var(--muted)}
+.pr{font-size:12px;padding:3px 10px;border-radius:99px;font-weight:600}
+.pr.Haute{background:rgba(255,95,87,.15);color:#ff6b62}.pr.Moyenne{background:rgba(245,199,107,.18);color:#d9a53a}.pr.Basse{background:rgba(122,165,255,.15);color:var(--accent2)}
+@media(max-width:760px){.nw{grid-template-columns:1fr}.inc{grid-template-columns:1fr 1fr}.ttl{grid-column:1/-1}}
+.lg{font-size:13px;color:var(--muted);margin-bottom:16px}.lg b{color:var(--accent)}
+.tree{display:grid;gap:22px 16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-bottom:8px}
+.bh{font-weight:700;margin-bottom:12px}
+.nd{overflow:visible;padding:12px 14px;margin-bottom:18px;cursor:pointer;font-size:14.5px;font-weight:600;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.nd::before{border-radius:inherit}
+.nd:not(:last-child)::after{content:"";position:absolute;left:26px;top:100%;height:18px;width:2px;background:var(--border)}
+.nd.a{border-color:var(--accent);box-shadow:0 0 22px var(--glow)}.nd.e{border-color:var(--accent2)}.nd.o{border-style:dashed;opacity:.6}
+.nd i{font-style:normal;font-size:12px;color:var(--accent)}.nd.sel{outline:2px solid var(--text);outline-offset:2px}
+#ni{padding:18px 22px;margin-top:6px;min-height:84px}.m0{margin:6px 0 0;color:var(--muted)}
+.ab{display:grid;grid-template-columns:1.5fr 1fr;gap:26px;align-items:start}
+.ab p{font-size:clamp(17px,2vw,19px);margin:0 0 16px}
+.fact{padding:14px 22px}.fact div{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--border);font-size:14.5px}.fact div:last-child{border:0}.fact span{width:22px}
+.ct{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;padding:46px;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 11%,var(--surface)),var(--surface) 55%,color-mix(in srgb,var(--accent2) 11%,var(--surface)))}
+.ct h2{margin-bottom:12px}.ct .sub{margin:0}
+.ctr{display:flex;flex-direction:column;gap:12px}
+.row2{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--border);border-radius:14px;background:var(--bg);color:var(--text);text-decoration:none;transition:.25s}
+a.row2:hover{border-color:var(--accent);transform:translateX(4px)}
+.row2 b{display:block;font-size:15.5px}.row2 small{color:var(--muted);font-size:12px}.row2 em{margin-left:auto;font-style:normal;color:var(--accent)}
+.ic2{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:var(--glow);font-size:18px}
+.ctr .btn{margin:0;justify-content:center}
+@media(max-width:820px){.ab,.ct{grid-template-columns:1fr}.ct{padding:28px 22px}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{background:var(--surface);border:1px solid var(--border);color:var(--text);border-radius:9px;padding:6px 12px;font-size:13px;cursor:pointer}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+#out{height:300px}
+.tl{border-left:2px solid var(--border);margin-left:9px;padding-left:28px}
+.tl div{position:relative;margin-bottom:26px}
+.tl div::before{content:"";position:absolute;left:-37px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--accent2)}
+.tl .now::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 6px var(--glow)}
+.tl b{display:block;font-size:17px}.tl span{color:var(--muted);font-size:14.5px}
+.cta{padding:48px 28px;text-align:center}
+.cta h2{margin-bottom:12px}.cta .sub{margin:0 auto 24px}
+footer{position:relative;z-index:1;text-align:center;padding:56px 20px 64px;color:var(--muted);font-size:13px}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,90px);background:var(--accent);color:#04120b;padding:10px 20px;border-radius:12px;font-weight:600;transition:.3s;z-index:40}
+#toast.show{transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas><div class="blob b1"></div><div class="blob b2"></div>
+<header class="nav"><div class="wrap">
+<a class="logo mono" href="#top">wilfried<span>.dev</span></a>
+<a href="#apropos">À propos</a><a href="#projets">Projets</a><a href="#demo">Démo</a><a href="#skills">Compétences</a><a href="#terminal">Terminal</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a>
+<button id="theme" title="Changer le thème" aria-label="Changer le thème">◐</button></div></header>
+
+<div class="wrap" id="top">
+<div class="hero">
+<div>
+<div class="eyebrow mono">Développeur junior · Montréal, QC</div>
+<h1>Wilfried<br><em>Tamba Soh</em></h1>
+<p class="lead">Passionné par la technologie et l’innovation, je conçois des applications web avec C#/.NET, Java et Python. Je cherche un rôle de développeur junior où je peux réfléchir, apprendre vite et contribuer.</p>
+<a class="btn" href="#projets">Voir mes projets →</a><a class="btn alt" href="#contact">Me contacter</a>
+</div>
+<div class="term mono"><div class="bar"><i></i><i></i><i></i><span>~/wilfried</span></div><div class="out" id="hterm"></div></div>
+</div>
+
+<section id="apropos" class="rv">
+<div class="k mono">01 / À PROPOS</div><h2>Un peu de moi</h2>
+<div class="ab"><div>
+<p>Je suis arrivé à Montréal en 2025 pour repartir de zéro et bâtir quelque chose de solide. Aujourd’hui, j’étudie le développement web au Collège LaSalle, et la technologie est devenue pour moi une vraie passion.</p>
+<p>Je ne prétends pas tout savoir. Il y a des compétences que je n’ai pas encore, et je le dis franchement : je les construirai une à une, avec du travail et de la constance.</p>
+<p>Mon rêve est de m’installer durablement au Québec et d’y occuper un poste où je dois réfléchir, prendre position et faire avancer les choses.</p>
+</div>
+<div class="c fact">
+<div><span>📍</span>Montréal, depuis 2025</div><div><span>🎓</span>Collège LaSalle · DEC en développement web</div><div><span>🗣</span>Français (langue maternelle) · anglais</div><div><span>♟</span>Basketball, échecs, lecture</div>
+</div></div></section>
+
+<section id="projets" class="rv">
+<div class="k mono">02 / PROJETS</div><h2>Ce que j’ai construit</h2><p class="sub">Synchronisé automatiquement avec mon GitHub.</p>
+<div class="projs" id="projs"></div></section>
+
+<section id="demo" class="rv">
+<div class="k mono">03 / DÉMO LIVE</div><h2>MaintenanceSystem, essaie-le</h2><p class="sub">Une version simplifiée avec des données fictives : crée un incident, assigne-le, fais-le avancer. Le vrai projet contient un tableau de bord, des incidents, des équipements et des techniciens.</p>
+<div class="dash" id="kp"></div>
+<div class="c nw"><input id="nt" placeholder="Décris l’incident…" aria-label="Titre de l’incident"><select id="ne" aria-label="Équipement"></select><select id="np" aria-label="Priorité"></select><button class="btn sm" id="nb">+ Créer</button></div>
+<div class="fl" id="fl"></div><div id="il"></div></section>
+
+<section id="skills" class="rv">
+<div class="k mono">04 / COMPÉTENCES</div><h2>Mon arbre de compétences</h2><p class="sub">Où j’en suis vraiment, branche par branche. Clique sur une compétence pour le détail.</p>
+<div class="lg mono" id="lg"></div><div class="tree" id="tree"></div>
+<div class="c" id="ni"><p class="m0">Clique sur une compétence pour voir où j’en suis.</p></div></section>
+
+<section id="terminal" class="rv">
+<div class="k mono">05 / TERMINAL</div><h2>Pilote le portfolio à la commande</h2><p class="sub">Tape une commande ou clique sur un raccourci.</p>
+<div class="term mono"><div class="bar"><i></i><i></i><i></i><span>wilfried@portfolio: ~</span></div><div class="out" id="out"></div>
+<div class="inp"><span>$</span><input id="in" autocomplete="off" spellcheck="false" aria-label="Commande" placeholder="tape help…"></div></div>
+<div class="chips mono" id="chips"></div></section>
+
+<section id="parcours" class="rv">
+<div class="k mono">06 / PARCOURS</div><h2>Ma trajectoire</h2><p class="sub">&nbsp;</p>
+<div class="tl">
+<div><b>Arrivée à Montréal</b><span>2025 · nouveau départ au Québec</span></div>
+<div><b>DEC 420.B0 — Développement Web et Programmation</b><span>Collège LaSalle · C#, ASP.NET, Java, Python, Linux, Swift, Kotlin</span></div>
+<div class="now"><b>Aujourd’hui</b><span>Je renforce mes bases et j’apprends Swift et Kotlin, tout en construisant mes projets</span></div>
+<div><b>Prochaine étape : un rôle où je peux grandir</b><span>Passionné par l’innovation et la technologie, ouvert à tout poste qui demande de la réflexion et de la prise de position</span></div>
+</div></section>
+
+<section id="contact" class="rv" style="padding-bottom:20px">
+<div class="c ct"><div><div class="k mono">07 / CONTACT</div><h2>Construisons quelque chose ensemble</h2><p class="sub">Une opportunité, un projet, une question ? Écris-moi, je réponds avec plaisir.</p></div>
+<div class="ctr"><a class="row2" href="mailto:alansoh343@gmail.com"><span class="ic2">✉</span><span><small class="mono">Courriel</small><b>alansoh343@gmail.com</b></span><em>→</em></a>
+<div class="row2"><span class="ic2">📍</span><span><small class="mono">Basé à</small><b>Montréal, Québec</b></span></div>
+<div id="lk"></div><button class="btn alt mono" id="copy">$ copier l’adresse</button></div></div></section>
+</div>
+<footer class="mono">© 2026 Wilfried Tamba Soh · Montréal, Québec</footer>
+<div id="toast">Adresse copiée ✔</div>
+
+<script>
+const $=s=>document.querySelector(s),E='alansoh343@gmail.com';
+const esc=t=>t.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+$('#theme').onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=d?'light':'dark'};
+/* révélations au scroll + halo souris */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+addEventListener('pointermove',e=>{const c=e.target.closest&&e.target.closest('.c');if(c){const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}});
+/* terminal du hero (auto-frappe) */
+(async()=>{const h=$('#hterm'),sl=ms=>new Promise(r=>setTimeout(r,ms));
+const L=[['whoami','<span class="g">wilfried</span> · développeur junior'],['stack --primary','<span class="b">C#</span> · .NET · Blazor\n<span class="b">Python</span> · <span class="b">Java</span>'],['status','<span class="g">●</span> en cours : pipeline ETL\n<span class="g">●</span> objectif : un poste junior en développement']];
+for(const[c,o]of L){h.innerHTML+='<span class="g">$</span> ';for(const ch of c){h.innerHTML+=ch;await sl(45)}h.innerHTML+='\n';await sl(250);h.innerHTML+=o+'\n\n';await sl(500)}
+h.innerHTML+='<span class="g">$</span> <span class="m">▍</span>'})();
+/* terminal interactif */
+const out=$('#out'),inp=$('#in'),P=t=>{out.innerHTML+=t+'\n';out.scrollTop=out.scrollHeight};
+const C={
+help:()=>`<span class="y">Commandes :</span>\n  whoami · skills · projects · formation · contact\n  demo · theme · clear · sudo hire wilfried`,
+whoami:()=>`<span class="g">Wilfried Tamba Soh</span>, 22 ans, Montréal\nÉtudiant en développement web (Collège LaSalle).\nObjectif : un poste junior en développement, à Montréal.`,
+skills:()=>`<span class="b">C#</span> ████████ langage principal (.NET, Blazor)\n<span class="b">Python</span> ██████░░ actif (Django)\n<span class="b">Java</span> ██████░░ actif (Spring Boot, Batch)\n<span class="b">SQL</span> · HTML/CSS/JS · POO · structures de données\n<span class="b">Swift</span> · <span class="b">Kotlin</span> en cours · maths & stats · Office`,
+projects:()=>`<span class="g">MaintenanceSystem</span>  gestion d’incidents (réalisé)\n<span class="g">Pipeline ETL</span>       Java/Spring Batch/PostgreSQL (en cours)`,
+formation:()=>`DEC 420.B0 Développement Web et Programmation\nCollège LaSalle, Montréal`,
+contact:()=>`<span class="g">${E}</span>\nMontréal, QC`,
+theme:()=>{$('#theme').click();return '<span class="m">thème basculé</span>'},
+clear:()=>{out.innerHTML='';return ''},
+demo:()=>{setTimeout(()=>$('#demo').scrollIntoView(),400);return '<span class="m">→ ouverture de la démo…</span>'},
+'sudo hire wilfried':()=>`<span class="g">[sudo] permission accordée ✔</span>\nÉcris-moi : ${E}`};
+function exec(v){v=v.trim().toLowerCase();if(!v)return;P(`<span class="g">$</span> ${esc(v)}`);const f=C[v];if(f){const r=f();if(r)P(r)}else P(`<span class="r">commande introuvable :</span> ${esc(v)} — tape <span class="y">help</span>`)}
+inp.addEventListener('keydown',e=>{if(e.key==='Enter'){exec(inp.value);inp.value=''}});
+['help','whoami','skills','projects','contact','sudo hire wilfried'].forEach(c=>{const b=document.createElement('button');b.className='chip';b.textContent=c;b.onclick=()=>exec(c);$('#chips').append(b)});
+P('<span class="g">Bienvenue.</span> Tape <span class="y">help</span> ou clique sur un raccourci.\n');
+/* démo MaintenanceSystem */
+const EQ=['Pompe P-102','Convoyeur C-07','Compresseur K-3','Chaudière B-1'],TE=['Équipe A','Équipe B','Équipe C'],PR=['Haute','Moyenne','Basse'],ST=['Ouvert','En cours','Résolu'];
+let I=[{id:1,t:'Fuite d’huile sur le joint',e:EQ[0],p:'Haute',s:'En cours',a:'Équipe A'},{id:2,t:'Bruit anormal au roulement',e:EQ[1],p:'Moyenne',s:'Ouvert',a:''},{id:3,t:'Remplacement du filtre',e:EQ[2],p:'Basse',s:'Résolu',a:'Équipe B'}],nid=4,F='Tous';
+const opt=(a,v)=>a.map(x=>`<option${x===v?' selected':''}>${x}</option>`).join('');
+$('#ne').innerHTML=opt(EQ);$('#np').innerHTML=opt(PR,'Moyenne');
+function rd(){
+$('#kp').innerHTML=ST.map(x=>`<div class="c kpi"><b>${I.filter(i=>i.s===x).length}</b><span>${x}</span></div>`).join('');
+$('#fl').innerHTML=['Tous',...ST].map(x=>`<button class="chip${x===F?' on':''}" data-f="${x}">${x}</button>`).join('');
+const L=I.filter(i=>F==='Tous'||i.s===F);
+$('#il').innerHTML=L.length?L.map(i=>`<div class="c inc"><div class="ttl"><b>${esc(i.t)}</b><small>${i.e}</small></div><span class="pr ${i.p}">${i.p}</span><select data-id="${i.id}" data-a="as" aria-label="Technicien"><option value="">Non assigné</option>${opt(TE,i.a)}</select><button class="btn alt sm" data-id="${i.id}" data-a="adv">${i.s==='Ouvert'?'Prendre en charge':i.s==='En cours'?'Marquer résolu':'Rouvrir'}</button><button class="chip" data-id="${i.id}" data-a="del" aria-label="Supprimer">✕</button></div>`).join(''):'<p class="sub">Aucun incident dans cette vue.</p>'}
+document.addEventListener('click',e=>{const f=e.target.closest('[data-f]');if(f){F=f.dataset.f;rd();return}
+const b=e.target.closest('[data-a]');if(!b||b.tagName==='SELECT')return;const i=I.find(x=>x.id==b.dataset.id);
+if(b.dataset.a==='adv'){const k=ST.indexOf(i.s);i.s=ST[(k+1)%3];if(i.s==='En cours'&&!i.a)i.a=TE[0]}else I=I.filter(x=>x!==i);rd()});
+document.addEventListener('change',e=>{if(e.target.dataset&&e.target.dataset.a==='as'){I.find(x=>x.id==e.target.dataset.id).a=e.target.value}});
+function add(){const t=$('#nt').value.trim();if(!t)return;I.unshift({id:nid++,t,e:$('#ne').value,p:$('#np').value,s:'Ouvert',a:''});$('#nt').value='';F='Tous';rd()}
+$('#nb').onclick=add;$('#nt').addEventListener('keydown',e=>{if(e.key==='Enter')add()});rd();
+/* arbre de compétences */
+const LB={a:'Acquis',e:'En cours',o:'Objectif'},cnt={a:0,e:0,o:0};let SEL=null;
+/* ===== AJOUTER UNE COMPÉTENCE : ['Nom','a' (acquis) | 'e' (en cours) | 'o' (objectif),'Description'] dans la bonne branche ===== */
+const T=[['⚙','C# / .NET',[['POO & structures de données','a','Les fondations : classes, héritage, collections et algorithmes de base.'],['ASP.NET MVC & API Web','a','Contrôleurs, vues, routes et API avec ASP.NET.'],['Blazor','a','Interfaces web interactives dans l’écosystème .NET.'],['Entity Framework Core','a','Accès aux données depuis C# avec un ORM, utilisé dans MaintenanceSystem.'],['Architecture propre','o','Bien séparer domaine, services et accès aux données.']]],
+['🗄','Données',[['SQL','a','Requêtes, jointures et modélisation de base.'],['SQL Server','a','Base de données de mon projet MaintenanceSystem.'],['PostgreSQL','e','La base de données de mon projet ETL.'],['Optimisation des requêtes','o','Index, plans d’exécution et performance.']]],
+['☕','Java',[['POO en Java','a','Classes, interfaces, exceptions, collections et Streams.'],['Spring Boot','a','Créer des applications et des API avec Spring Boot.'],['Spring Batch','e','Jobs, steps, readers, processors et writers.'],['Tests JUnit & Mockito','o','Des tests unitaires fiables pour mes projets.']]],
+['🐍','Python',[['Bases & structures de données','a','Listes, dictionnaires et programmation orientée objet.'],['Django','a','Framework web Python : modèles, vues et templates.'],['pandas','o','Manipulation et nettoyage de données.'],['Tests automatisés','o','pytest et bonnes pratiques de test.']]],
+['🌐','Web',[['HTML, CSS & JavaScript','a','Des pages responsives et interactives, comme ce portfolio.'],['API REST','e','Concevoir et consommer des API.']]],
+['📱','Mobile',[['Swift (iOS)','e','Je l’apprends en ce moment : applications iOS.'],['Kotlin (Android)','e','Je l’apprends en ce moment : développement Android.']]],
+['☁','DevOps',[['Linux','a','Ligne de commande et système d’exploitation.'],['Git','a','Travailler proprement en équipe sur un projet.'],['CI/CD','o','Automatiser build, tests et déploiement.'],['Cloud & conteneurs','o','Docker et déploiement dans le cloud.']]],
+['∑','Maths & stats',[['Mathématiques','a','Bases solides, utiles pour la logique et les algorithmes.'],['Statistiques','a','Lecture et analyse de données.']]],
+['🗂','Bureautique',[['Word','a','Rédaction et mise en forme de documents.'],['Excel','a','Tableaux, formules et analyse de données.'],['PowerPoint','a','Présentations claires et soignées.'],['Outlook & Teams','a','Communication et organisation au quotidien.']]]];
+T.forEach(([ic,n,ns])=>{const b=document.createElement('div');b.innerHTML=`<div class="bh">${ic} ${n}</div>`;
+ns.forEach(([t,s,d])=>{cnt[s]++;const x=document.createElement('div');x.className='c nd '+s;x.innerHTML=`<span>${t}</span><i class="mono">${s==='a'?'✓':s==='e'?'◐':'🔒'}</i>`;
+x.onclick=()=>{SEL&&SEL.classList.remove('sel');SEL=x;x.classList.add('sel');$('#ni').innerHTML=`<b>${t}</b> <span class="pill">${LB[s]}</span><p class="m0">${d}</p>`};b.append(x)});$('#tree').append(b)});
+$('#lg').innerHTML=`<b>${cnt.a}</b> acquises · <b>${cnt.e}</b> en cours · <b>${cnt.o}</b> objectifs`;
+/* ===== AJOUTER UN PROJET : copie un bloc {…} dans PROJETS (sépare-les par une virgule) ===== */
+const PROJETS=[
+{repo:'maintenance-incident-management',nom:'MaintenanceSystem',branche:'main',statut:'Réalisé',desc:'Système de gestion d’incidents de maintenance industrielle.',tags:['Blazor Server','ASP.NET Core','Entity Framework Core','SQL Server'],details:['Tableau de bord de suivi','Création et suivi des incidents','Liste des équipements','Liste des techniciens'],lien:'https://github.com/Tamba2004/maintenance-incident-management'},
+{nom:'Pipeline ETL multi-formats',branche:'feat/etl-pipeline',statut:'En cours',desc:'Traitement de données pensé pour des clients de grande entreprise.',tags:['Java','Spring Batch','PostgreSQL'],details:['Données réelles (météo d’Environnement Canada)','Règles de validation poussées','Rapports d’exécution lisibles','Erreurs partielles gérées : une ligne rejetée n’arrête pas le lot'],lien:''},
+{repo:'Student_Manager',nom:'Student Manager',branche:'main',statut:'Scolaire',desc:'Projet scolaire en Swift.',tags:['Swift'],details:[],lien:'https://github.com/Tamba2004/Student_Manager'},
+{repo:'dw4_aspnet-revision',nom:'Révision ASP.NET (DW4)',branche:'main',statut:'Scolaire',desc:'Révisions du cours Web serveur II (ASP.NET).',tags:['ASP.NET','Révision'],details:[],lien:'https://github.com/Tamba2004/dw4_aspnet-revision'},
+{repo:'python',nom:'Python',branche:'main',statut:'Scolaire',desc:'Code Python versionné sur GitHub.',tags:['Python'],details:[],lien:'https://github.com/Tamba2004/python'}
+];
+const renderProj=()=>$('#projs').innerHTML=PROJETS.map(p=>`<article class="c proj"><div class="top"><span class="br mono">⎇ ${p.branche}</span><span class="pill">${p.statut}</span></div><h3>${p.nom}</h3><p>${p.desc}</p><div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>${p.maj?`<small class="mono m0">Mis à jour le ${p.maj}</small>`:''}${p.details.length?`<ul class="more">${p.details.map(d=>`<li>${d}</li>`).join('')}</ul><button class="link" data-tog>Voir le détail →</button>`:''}${p.lien?` <a class="link" href="${p.lien}" target="_blank" rel="noopener">Voir le code ↗</a>`:''}</article>`).join('');renderProj();
+/* ===== SYNCHRO GITHUB AUTOMATIQUE : tout nouveau dépôt public apparaît ici sans rien modifier ===== */
+const GH='Tamba2004';
+(async()=>{try{let d=JSON.parse(sessionStorage.getItem('gh')||'null');
+if(!d){const r=await fetch(`https://api.github.com/users/${GH}/repos?per_page=100&sort=pushed`);if(!r.ok)return;d=await r.json();sessionStorage.setItem('gh',JSON.stringify(d))}
+const by=Object.fromEntries(PROJETS.filter(p=>p.repo).map(p=>[p.repo,p]));
+d.filter(r=>!r.fork&&r.name!==GH&&r.name!=='WILFRIED.TAMBA').forEach(r=>{const day=r.pushed_at.slice(0,10);if(by[r.name])by[r.name].maj=day;else PROJETS.push({repo:r.name,nom:r.name.replace(/[-_]/g,' '),branche:r.default_branch,statut:'GitHub',desc:r.description||'Projet publié sur GitHub.',tags:[r.language].filter(Boolean).concat(r.topics||[]),details:[],lien:r.html_url,maj:day})});
+renderProj()}catch(e){}})();
+document.addEventListener('click',e=>{const b=e.target.closest('[data-tog]');if(!b)return;const p=b.closest('.proj');p.classList.toggle('open');b.textContent=p.classList.contains('open')?'Masquer ↑':'Voir le détail →'});
+/* ===== AJOUTER UN LIEN (LinkedIn, GitHub…) : ['LinkedIn','https://…'] ===== */
+const LIENS=[['LinkedIn','https://www.linkedin.com/in/wilfried-alan-tamba-soh-928bb1346/'],['GitHub','https://github.com/Tamba2004']];
+$('#lk').innerHTML=LIENS.map(([n,u])=>`<a class="row2" href="${u}" target="_blank" rel="noopener" style="margin-bottom:12px"><span class="ic2">↗</span><span><small class="mono">Profil</small><b>${n}</b></span><em>→</em></a>`).join('');
+$('#copy').onclick=()=>{(navigator.clipboard?navigator.clipboard.writeText(E):Promise.reject()).catch(()=>{}).finally(()=>{const t=$('#toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)})};
+/* fond animé */
+(()=>{const c=$('#bg'),x=c.getContext('2d');let w,h,N=[];const rs=()=>{w=c.width=innerWidth;h=c.height=innerHeight;N=Array.from({length:Math.min(50,w/20|0)},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3}))};rs();addEventListener('resize',rs);
+const m={x:-999,y:-999};addEventListener('pointermove',e=>{m.x=e.clientX;m.y=e.clientY});
+const f=()=>{x.clearRect(0,0,w,h);const a=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()||'#38e2a0';x.strokeStyle=a;x.fillStyle=a;
+for(const p of N){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;x.globalAlpha=.7;x.beginPath();x.arc(p.x,p.y,1.5,0,7);x.fill()}
+for(let i=0;i<N.length;i++){for(let j=i+1;j<N.length;j++){const d=Math.hypot(N[i].x-N[j].x,N[i].y-N[j].y);if(d<130){x.globalAlpha=(1-d/130)*.3;x.beginPath();x.moveTo(N[i].x,N[i].y);x.lineTo(N[j].x,N[j].y);x.stroke()}}
+const d=Math.hypot(N[i].x-m.x,N[i].y-m.y);if(d<170){x.globalAlpha=(1-d/170)*.6;x.beginPath();x.moveTo(N[i].x,N[i].y);x.lineTo(m.x,m.y);x.stroke()}}
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)requestAnimationFrame(f)};f()})();
+</script>
+</body>
+</html>

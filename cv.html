@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV — Wilfried Tamba Soh</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef1f6;--paper:#fff;--text:#111827;--muted:#5b6678;--accent:#0b8f63;--accent2:#3b5bdb;--line:#e1e6ee;--side:#f5f7fb;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#07090e;--paper:#0f141c;--text:#e8eef6;--muted:#93a0b3;--accent:#38e2a0;--accent2:#7aa5ff;--line:#1f2937;--side:#0b1017;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:14.5px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+.bar{max-width:920px;margin:18px auto 0;padding:0 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:var(--paper)}
+.seg button{border:0;background:none;color:var(--muted);padding:9px 16px;font:600 13.5px Inter,sans-serif;cursor:pointer}
+.seg button.on{background:var(--accent);color:#04120b}
+.btn{border:1px solid var(--line);background:var(--paper);color:var(--text);padding:9px 16px;border-radius:11px;font:600 13.5px Inter,sans-serif;cursor:pointer;margin-left:auto}
+.hint{width:100%;font-size:12.5px;color:var(--muted)}
+.cv{max-width:920px;margin:14px auto 40px;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 20px 60px -30px rgba(0,0,0,.35)}
+.hd{padding:30px 34px 22px;border-bottom:3px solid var(--accent);display:flex;gap:18px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}
+.hd h1{margin:0;font-size:34px;letter-spacing:-.03em;line-height:1.05;font-weight:800}
+.hd .t{margin:6px 0 0;color:var(--accent2);font-weight:600;font-size:16px}
+.ic{display:flex;gap:10px}
+.ic a{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;color:var(--text);text-decoration:none;font-weight:800;font-size:15px;transition:.2s}
+.ic a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.ic svg{width:19px;height:19px;fill:currentColor}
+.body{display:grid;grid-template-columns:270px 1fr}
+aside{background:var(--side);padding:24px 24px 28px;border-right:1px solid var(--line)}
+main{padding:24px 34px 30px}
+h2{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;font-weight:700}
+.sec{margin-bottom:24px;break-inside:avoid}
+aside .sec{margin-bottom:22px}
+.ct div{margin-bottom:5px;word-break:break-word;font-size:13.5px}.ct a{color:var(--text);text-decoration:none}.ct a:hover{color:var(--accent)}
+.g{margin-bottom:12px}.g small{display:block;color:var(--muted);font-size:11.5px;margin-bottom:5px;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{border:1px solid var(--line);background:var(--paper);color:var(--text);border-radius:7px;padding:3px 9px;font:500 12px Inter,sans-serif;cursor:pointer;transition:.15s}
+.chip:hover{border-color:var(--accent)}.chip.on{background:var(--accent);border-color:var(--accent);color:#04120b}
+.it{margin-bottom:14px;break-inside:avoid}
+.row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.row b{font-size:15px}.dt{color:var(--muted);font-size:12.5px;white-space:nowrap}
+.org{color:var(--accent2);font-weight:500;font-size:13.5px}
+.it p,.it li{margin:3px 0;color:var(--muted);font-size:13.5px}.it ul{margin:4px 0 0;padding-left:18px}
+.pj{border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin-bottom:11px;transition:.2s;break-inside:avoid}
+.pj.dim{opacity:.35}.pj.hit{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
+.pj .lk{color:var(--accent);font-size:12.5px;font-weight:600;text-decoration:none}
+.tg{display:flex;flex-wrap:wrap;gap:5px;margin:7px 0 2px}.tg span{font-size:11.5px;padding:2px 8px;border-radius:6px;background:color-mix(in srgb,var(--accent2) 12%,transparent);color:var(--accent2);font-weight:500}
+.det{display:none;margin-top:8px}.pj.open .det{display:block}
+.det h4{margin:9px 0 2px;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.more{background:none;border:0;color:var(--accent);font:600 12.5px Inter,sans-serif;cursor:pointer;padding:0;margin-top:5px}
+.sub{font-size:11.5px;color:var(--muted);margin:-4px 0 10px}
+@media(max-width:760px){.body{grid-template-columns:1fr}aside{border-right:0;border-bottom:1px solid var(--line)}.hd,main{padding-left:20px;padding-right:20px}}
+@media print{
+@page{size:letter;margin:12mm}
+:root{--bg:#fff;--paper:#fff;--text:#111;--muted:#444;--accent:#0b7d57;--accent2:#2a45b0;--line:#d6dbe3;--side:#f4f6fa;color-scheme:light}
+body{font-size:11.5px;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.bar,.more,.hint,.sub{display:none!important}.cv{margin:0;border:0;border-radius:0;box-shadow:none;max-width:none}
+.det{display:block!important}.pj.dim{opacity:1}.hd{padding:0 0 12px}.hd h1{font-size:28px}.ic{display:none}
+aside{padding:14px}main{padding:14px 0 0 22px}.body{grid-template-columns:215px 1fr}
+.sec,.pj,.it{break-inside:avoid}.pjs{break-inside:auto}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<div class="bar">
+<div class="seg" id="seg"></div>
+<button class="btn" onclick="window.print()">⬇ Imprimer / PDF</button>
+<div class="hint">Clique sur une compétence pour voir les projets qui la prouvent, et sur un projet pour son détail.</div>
+</div>
+<div class="cv">
+<header class="hd"><div><h1 id="nom"></h1><p class="t" id="ttl"></p></div><div class="ic" id="ic"></div></header>
+<div class="body"><aside id="side"></aside><main id="main"></main></div>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+
+/* =====================  DONNÉES  (modifie seulement cette partie)  ===================== */
+const AFFICHER_TELEPHONE=false;   // mets true pour la version envoyée aux employeurs (pas pour le web public)
+const ID={nom:'Wilfried Tamba Soh',email:'alansoh343@gmail.com',tel:'514-941-8284',ville:'Montréal, QC',
+github:'https://github.com/Tamba2004',linkedin:'https://www.linkedin.com/in/wilfried-alan-tamba-soh-928bb1346/'};
+
+const VERSIONS={
+dev:{label:'Développement',titre:'Développeur junior · C#/.NET · Java · Python',
+profil:'Étudiant au DEC en développement web au Collège LaSalle (fin prévue : décembre 2026). Je développe des applications avec C#/.NET (ASP.NET, Blazor, Entity Framework Core), Java (Spring Boot) et Python (Django), et je versionne mes projets sur GitHub. Je cherche un poste junior en développement où je peux réfléchir, apprendre vite et contribuer.',
+ordre:[0,1,2,3,4]}
+};
+
+/* Chaque groupe : [titre, [compétences]] — « Nom|clé » permet de relier la compétence aux projets */
+const COMP=[
+['Langages & frameworks',['C#','ASP.NET (MVC, API Web)|ASP.NET','Blazor','Entity Framework Core','Java','Spring Boot','Spring Batch (en cours)','Python','Django','SQL','SQL Server','PostgreSQL (en cours)','HTML / CSS / JavaScript']],
+['Mobile',['Swift (en cours)','Kotlin (en cours)']],
+['Outils & systèmes',['Git / GitHub','Linux']],
+['Bureautique',['Word','Excel','PowerPoint','Outlook','Teams']],
+['Autres',['Mathématiques','Statistiques']]];
+
+const FORMATION=[{titre:'DEC 420.B0 — Développement Web et Programmation',org:'Collège LaSalle, Montréal',dates:'2025 – décembre 2026 (prévu)',
+pts:['Cours : ASP.NET (Web serveur II), système d’exploitation Linux, développement Android (Kotlin), iOS (Swift), dépannage informatique']}];
+
+/* programme = ce qui est réellement programmé · teste = ce qui est testé · concu = conçu, pas encore implémenté */
+const PROJETS=[
+{v:['dev','sup'],nom:'MaintenanceSystem',date:'2026',lien:'https://github.com/Tamba2004/maintenance-incident-management',
+tech:['C#','Blazor','ASP.NET','Entity Framework Core','SQL Server'],
+resume:'Application web de gestion d’incidents de maintenance industrielle.',
+programme:['Gestion complète (création, modification, suppression) des incidents, des équipements et des techniciens','Cycle de statut d’un incident : Ouvert → Assigné → En cours → Résolu','Assignation d’un technicien à un incident','Tableau de bord de statistiques','Base de données SQL Server avec migrations Entity Framework Core'],
+teste:[],concu:[]},
+{v:['dev'],nom:'Pipeline ETL multi-formats',date:'En cours',lien:'',
+tech:['Java','Spring Batch','PostgreSQL'],
+resume:'Pipeline de traitement de données pensé pour des clients de grande entreprise (projet en cours).',
+programme:[],teste:[],
+concu:['Lecture de plusieurs formats de fichiers et de données réelles (météo d’Environnement Canada)','Règles de validation et gestion des erreurs partielles','Rapports d’exécution lisibles']},
+{v:['dev'],nom:'Student Manager',date:'',lien:'https://github.com/Tamba2004/Student_Manager',tech:['Swift'],resume:'Projet scolaire en Swift (iOS).',programme:[],teste:[],concu:[]},
+{v:['dev'],nom:'Révision ASP.NET (cours Web serveur II)',date:'',lien:'https://github.com/Tamba2004/dw4_aspnet-revision',tech:['ASP.NET'],resume:'Dépôt de révision du cours d’applications Web serveur II.',programme:[],teste:[],concu:[]},
+{v:['dev'],nom:'Exercices Python',date:'',lien:'https://github.com/Tamba2004/python',tech:['Python'],resume:'Code Python versionné sur GitHub.',programme:[],teste:[],concu:[]}
+/* --- MODÈLE POUR AJOUTER UN PROJET (EcoRoute AI, etc.) : décommente, remplis, sépare par une virgule ---
+,{v:['dev'],nom:'EcoRoute AI',date:'mois année',lien:'https://github.com/…',tech:['Python'],resume:'Une phrase.',
+programme:['Ce que tu as réellement programmé'],teste:['Ce que tu as réellement testé'],concu:['Ce que tu as conçu mais pas encore codé']}
+*/];
+
+const EXPERIENCE=[
+{v:['dev','sup'],poste:'Cuisinier',org:'Staff Renter (agence)',lieu:'Montréal, QC',dates:'Mai 2025 – présent',pts:['Poste à temps partiel (CDI)']},
+{v:['dev','sup'],poste:'Serveur / runner / busboy',org:'Agences Staff Renter, Sacrée Soirée et Salin',lieu:'Montréal, QC',dates:'',pts:['Mandats : Fairmont Le Manoir Richelieu, Hôtel InterContinental Montréal, Hôtel Moxy','Événements d’envergure : Grand Prix de Formule 1 de Montréal, Omnium Banque Nationale']}
+
+/* --- MODÈLE : expérience en informatique (à placer en PREMIER dans la liste) ---
+,{v:['dev','sup'],poste:'Titre du poste',org:'Employeur',lieu:'Ville',dates:'Nov. 2023 – déc. 2024',pts:['Réalisation concrète 1','Réalisation concrète 2']}
+*/];
+const LANGUES=['Français — langue maternelle','Anglais — intermédiaire'];
+const INTERETS='Basketball · Échecs · Lecture';
+/* =====================  FIN DES DONNÉES  ===================== */
+
+const GH='<svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>';
+const key=c=>c.includes('|')?c.split('|')[1]:c.replace(/ \(en cours\)$/,'');
+const lab=c=>c.split('|')[0];
+let cur=location.hash==='#soutien'?'sup':'dev',hl=null;
+
+function render(){
+const V=VERSIONS[cur];
+$('#nom').textContent=ID.nom;$('#ttl').textContent=V.titre;
+$('#ic').innerHTML=`<a href="${ID.github}" target="_blank" rel="noopener" aria-label="GitHub">${GH}</a><a href="${ID.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>`;
+$('#seg').style.display=Object.keys(VERSIONS).length>1?'':'none';$('#seg').innerHTML=Object.entries(VERSIONS).map(([k,v])=>`<button class="${k===cur?'on':''}" data-v="${k}">${v.label}</button>`).join('');
+const groups=V.ordre.map(i=>COMP[i]);
+$('#side').innerHTML=`<div class="sec ct"><h2>Contact</h2><div>📍 ${ID.ville}</div><div>✉ <a href="mailto:${ID.email}">${ID.email}</a></div>${AFFICHER_TELEPHONE?`<div>☎ ${ID.tel}</div>`:''}<div><a href="${ID.github}" target="_blank" rel="noopener">GitHub · Tamba2004</a></div><div><a href="${ID.linkedin}" target="_blank" rel="noopener">LinkedIn</a></div></div>
+<div class="sec"><h2>Compétences</h2>${groups.map(([g,items])=>`<div class="g"><small>${g}</small><div class="chips">${items.map(c=>`<button class="chip${hl===key(c)?' on':''}" data-k="${key(c)}">${lab(c)}</button>`).join('')}</div></div>`).join('')}</div>
+<div class="sec"><h2>Langues</h2>${LANGUES.map(l=>`<div>${l}</div>`).join('')}</div>
+<div class="sec"><h2>Intérêts</h2><div>${INTERETS}</div></div>`;
+const pj=PROJETS.filter(p=>p.v.includes(cur));
+const bl=(t,a)=>a.length?`<h4>${t}</h4><ul>${a.map(x=>`<li>${x}</li>`).join('')}</ul>`:'';
+$('#main').innerHTML=`<div class="sec"><h2>Profil</h2><p style="margin:0">${V.profil}</p></div>
+<div class="sec"><h2>Formation</h2>${FORMATION.map(f=>`<div class="it"><div class="row"><b>${f.titre}</b><span class="dt">${f.dates}</span></div><div class="org">${f.org}</div><ul>${f.pts.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('')}</div>
+<div class="sec pjs"><h2>Projets</h2><div class="sub">Dates, liens et distinction entre ce qui est programmé, testé et conçu.</div>${pj.map((p,i)=>{const m=hl&&p.tech.includes(hl);const d=p.programme.length||p.teste.length||p.concu.length;
+return `<div class="pj${hl?(m?' hit':' dim'):''}"><div class="row"><b>${p.nom}</b><span class="dt">${p.date}${p.lien?` · <a class="lk" href="${p.lien}" target="_blank" rel="noopener">GitHub ↗</a>`:''}</span></div><p style="margin:3px 0;color:var(--muted)">${p.resume}</p><div class="tg">${p.tech.map(t=>`<span>${t}</span>`).join('')}</div>${d?`<div class="det">${bl('Programmé',p.programme)}${bl('Testé',p.teste)}${bl('Conçu (pas encore implémenté)',p.concu)}</div><button class="more" data-o="${i}">Voir le détail ↓</button>`:''}</div>`}).join('')}</div>
+<div class="sec"><h2>Expérience professionnelle</h2>${EXPERIENCE.filter(e=>e.v.includes(cur)).map(e=>`<div class="it"><div class="row"><b>${e.poste}</b>${e.dates?`<span class="dt">${e.dates}</span>`:''}</div><div class="org">${e.org}${e.lieu?' · '+e.lieu:''}</div>${e.pts.length?`<ul>${e.pts.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}</div>`).join('')}</div>`;
+}
+document.addEventListener('click',e=>{
+const v=e.target.closest('[data-v]');if(v){cur=v.dataset.v;hl=null;render();return}
+const k=e.target.closest('[data-k]');if(k){hl=hl===k.dataset.k?null:k.dataset.k;render();return}
+const o=e.target.closest('[data-o]');if(o){const c=o.closest('.pj');c.classList.toggle('open');o.textContent=c.classList.contains('open')?'Masquer ↑':'Voir le détail ↓'}});
+render();
+</script>
+</body>
+</html>

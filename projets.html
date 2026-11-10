@@ -1,0 +1,30 @@
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Projets — Wilfried Tamba Soh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg"></canvas><div class="blob b1"></div><div class="blob b2"></div>
+<header class="nav"><div class="wrap">
+<a class="logo mono" href="index.html">wilfried<span>.dev</span></a>
+<a href="index.html">Accueil</a><a href="projets.html" class="on">Projets</a><a href="competences.html">Compétences</a><a href="terminal.html">Terminal</a><a href="contact.html">Contact</a>
+<button id="theme" title="Changer le thème" aria-label="Changer le thème">◐</button></div></header>
+
+<div class="wrap" id="top">
+<section id="projets" class="rv">
+<div class="k mono">02 / PROJETS</div><h2>Ce que j’ai construit</h2><p class="sub">Synchronisé automatiquement avec mon GitHub.</p>
+<div class="projs" id="projs"></div></section>
+<section id="demo" class="rv">
+<div class="k mono">03 / DÉMO LIVE</div><h2>MaintenanceSystem, essaie-le</h2><p class="sub">Une version simplifiée avec des données fictives : crée un incident, assigne-le, fais-le avancer. Le vrai projet contient un tableau de bord, des incidents, des équipements et des techniciens.</p>
+<div class="dash" id="kp"></div>
+<div class="c nw"><input id="nt" placeholder="Décris l’incident…" aria-label="Titre de l’incident"><select id="ne" aria-label="Équipement"></select><select id="np" aria-label="Priorité"></select><button class="btn sm" id="nb">+ Créer</button></div>
+<div class="fl" id="fl"></div><div id="il"></div></section>
+</div>
+<footer class="mono">© 2026 Wilfried Tamba Soh · Montréal, Québec</footer>
+<div id="toast">Adresse copiée ✔</div>
+<script src="app.js"></script>
+</body>
+</html>
